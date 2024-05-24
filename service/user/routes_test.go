@@ -45,7 +45,7 @@ func TestUserServiceHandlers(t *testing.T) {
 			router.ServeHTTP(rr, req)
 
 			if rr.Code != http.StatusBadRequest {
-				t.Errorf("expected status code %d, got %d", http.StatusBadRequest, rr.Code)
+				t.Errorf("expected code status %d, got %d", http.StatusBadRequest, rr.Code)
 			}
 		})
 }
