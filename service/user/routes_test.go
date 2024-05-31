@@ -20,10 +20,10 @@ func TestUserServiceHandlers(t *testing.T) {
 		"should fail if the user payload is invalid",
 		func(t *testing.T) {
 			payload := types.RegisterUserPayload{
-				Name:     "user",
-				Email:    "",
-				Password: "asd",
-				UserName: "user123",
+				FirstName: "eliot",
+				Email:     "",
+				Password:  "asd",
+				LastName:  "user123",
 			}
 
 			marshaled, _ := json.Marshal(payload)

@@ -43,6 +43,7 @@ func (h *Handler) handleRegister(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//Check if recurse exists
+	fmt.Printf("firtname : %s", payload.FirstName)
 	_, err := h.store.GetUserByEmail(payload.Email)
 
 	if err == nil {
@@ -60,10 +61,10 @@ func (h *Handler) handleRegister(w http.ResponseWriter, r *http.Request) {
 	}
 
 	err = h.store.CreateUser(types.User{
-		Name:     payload.Name,
-		Email:    payload.Email,
-		Password: payload.Password,
-		UserName: hashPassword,
+		FirstName: payload.FirstName,
+		Email:     payload.Email,
+		Password:  hashPassword,
+		LastName:  payload.LastName,
 	})
 
 	if err != nil {
